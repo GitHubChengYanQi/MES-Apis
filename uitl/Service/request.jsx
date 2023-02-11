@@ -19,6 +19,8 @@ export const useRequest = (
 
   const [data, setData] = useState();
 
+  const [error, setError] = useState();
+
   const [loading, setLoading] = useState(false);
 
   const run = (service) => {
@@ -31,7 +33,8 @@ export const useRequest = (
         resolve(res);
         setData(res);
         onSuccess(res);
-      }).catch(() => {
+      }).catch((res) => {
+        setError(res);
         reject();
         onError();
       }).finally(() => {
@@ -48,6 +51,7 @@ export const useRequest = (
     run,
     loading,
     data,
+    error,
   };
 };
 
@@ -55,16 +59,25 @@ export const useRequest = (
 export const request = (
   api,
   service = {},
+  defaultParams = {},
 ) => {
 
+  const {
+    onSuccess = () => {
+    },
+    onError = () => {
+    },
+  } = defaultParams;
 
   return new Promise((resolve, reject) => {
     ajaxService({
       ...api,
       ...(service || {}),
     }).then((res) => {
+      onSuccess(res);
       resolve(res);
     }).catch(() => {
+      onError();
       reject();
     });
   });

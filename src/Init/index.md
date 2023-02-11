@@ -11,7 +11,7 @@ title: 初始化
  * title: 设置请求地址
  */
 import React, { useState } from 'react';
-import { Init } from 'dumi-components'
+import { Init } from 'MES-Apis'
 import { Button, Input, Space } from 'antd';
 
 
@@ -35,37 +35,6 @@ export default () => {
 };
 ```
 
-###### Init.initToken()
-
-```jsx
-/**
- * title: 设置请求token
- */
-import React, { useState } from 'react';
-import { Init } from 'dumi-components'
-import { Space, Button, Input } from 'antd';
-
-
-export default () => {
-
-  const [success, setSuccess] = useState(window.dumiToken);
-  const [value, onChange] = useState(window.dumiToken);
-
-  return <Space>
-    <Input value={value} onChange={({ target: { value } }) => onChange(value)} />
-    <Button type='link' onClick={async () => {
-      Init.initToken(value)
-      setSuccess(value);
-    }}>设置</Button>
-    <div
-      style={{ color: success ? '#1890ff' : 'red' }}
-    >
-      {success ? '设置token成功！' : '未设置token'}
-    </div>
-  </Space>
-};
-```
-
 ###### Init.responseConfig()
 
 ```jsx
@@ -73,23 +42,24 @@ export default () => {
  * title: 响应拦截
  */
 import React, { useState } from 'react';
-import { Init } from 'dumi-components'
+import { Init } from 'MES-Apis'
 import { Button, message } from 'antd';
 
 
 export default () => {
 
-  const [success, setSuccess] = useState(window.responseConfig);
+  const [success, setSuccess] = useState(typeof window.loginTimeOut === 'function');
 
   return <Button
     danger={!success}
     onClick={async () => {
-      Init.responseConfig((res) => {
-        console.log(res)
-        // 处理响应信息
-        if (res.status !== 200) {
-          message.error('请求失败!')
-        }
+      Init.responseConfig({
+        loginTimeOut: (res) => {
+          message.warning(res)
+        },
+        errorMessage: (res) => {
+          message.error(res)
+        },
       })
       setSuccess(true);
     }}>

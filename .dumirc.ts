@@ -2,7 +2,7 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   themeConfig: {
-    name: 'dumi',
+    name: 'MES',
     nav: [],
   },
 });

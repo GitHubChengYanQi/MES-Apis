@@ -11,7 +11,7 @@ title: 物料
  * title: 使用Hook请求
  */
 import React from 'react';
-import { Sku } from 'dumi-components'
+import { Sku } from 'MES-Apis'
 import { Button } from 'antd';
 
 
@@ -45,7 +45,7 @@ export default () => {
  * title: 使用Promise请求
  */
 import React from 'react';
-import { Sku } from 'dumi-components'
+import { Sku } from 'MES-Apis'
 import { Button } from 'antd';
 
 export default () => {
@@ -65,7 +65,7 @@ export default () => {
  * title: 使用Hook请求
  */
 import React from 'react';
-import { Sku } from 'dumi-components'
+import { Sku } from 'MES-Apis'
 import { Button } from 'antd';
 
 export default () => {
@@ -104,7 +104,7 @@ export default () => {
  * title: 使用Promise请求
  */
 import React from 'react';
-import { Sku } from 'dumi-components'
+import { Sku } from 'MES-Apis'
 import { Button } from 'antd'
 
 export default () => {
@@ -129,7 +129,7 @@ export default () => {
  */
 
 import React from 'react';
-import { Sku } from 'dumi-components'
+import { Sku } from 'MES-Apis'
 import { Button } from 'antd'
 
 export default () => {

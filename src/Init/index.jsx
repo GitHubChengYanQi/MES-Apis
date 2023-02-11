@@ -2,18 +2,18 @@ export const initBaseURL = (url) => {
   window.dumiBaseURL = url;
 };
 
-export const initToken = (token) => {
-  window.dumiToken = token;
-};
-
-export const responseConfig = (config) => {
-  window.responseConfig = config;
+export const responseConfig = (
+  {
+    loginTimeOut=()=>{},
+    errorMessage=()=>{},
+  }) => {
+  window.loginTimeOut = loginTimeOut;
+  window.errorMessage = errorMessage;
 };
 
 
 export const Init = {
   initBaseURL,
-  initToken,
   responseConfig,
 };
 

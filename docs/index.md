@@ -1,7 +1,7 @@
 ---
-title: dumi-components
+title: MES-Apis
 hero:
-  title: 请求库
+  title: Apis
   description: 开发中...
   actions:
     - text: Start
