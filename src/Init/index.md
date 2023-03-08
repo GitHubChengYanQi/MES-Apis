@@ -1,8 +1,6 @@
 ---
-title: 初始化
+title: 01.初始化
 ---
-
-## 设置请求信息
 
 ###### Init.initBaseURL()
 
@@ -11,14 +9,14 @@ title: 初始化
  * title: 设置请求地址
  */
 import React, { useState } from 'react';
-import { Init } from 'MES-Apis'
+import { Init ,GlobalData} from 'MES-Apis'
 import { Button, Input, Space } from 'antd';
 
 
 export default () => {
 
-  const [success, setSuccess] = useState(window.dumiBaseURL);
-  const [value, onChange] = useState(window.dumiBaseURL || 'http://192.168.0.111');
+  const [success, setSuccess] = useState(GlobalData.baseURL);
+  const [value, onChange] = useState(GlobalData.baseURL || 'http://192.168.0.111');
 
   return <Space>
     <Input value={value} onChange={({ target: { value } }) => onChange(value)} />
@@ -29,7 +27,7 @@ export default () => {
     <div
       style={{ color: success ? '#1890ff' : 'red' }}
     >
-      {success ? `当前请求地址为：${window.dumiBaseURL}` : '未设置请求地址'}
+      {success ? `当前请求地址为：${GlobalData.baseURL}` : '未设置请求地址'}
     </div>
   </Space>
 };
@@ -42,17 +40,17 @@ export default () => {
  * title: 响应拦截
  */
 import React, { useState } from 'react';
-import { Init } from 'MES-Apis'
+import { Init, GlobalData } from 'MES-Apis'
 import { Button, message } from 'antd';
 
 
 export default () => {
 
-  const [success, setSuccess] = useState(typeof window.loginTimeOut === 'function');
+  const [success, setSuccess] = useState(typeof GlobalData.errorMessage === 'function');
 
   return <Button
     danger={!success}
-    onClick={async () => {
+    onClick={() => {
       Init.responseConfig({
         loginTimeOut: (res) => {
           message.warning(res)
@@ -64,6 +62,33 @@ export default () => {
       setSuccess(true);
     }}>
     {success ? '设置成功！' : '设置响应拦截'}
+  </Button>;
+};
+```
+
+
+###### Init.getPublicInfo()
+
+```jsx
+/**
+ * title: 获取公开信息
+ */
+import React, { useState } from 'react';
+import { Init, GlobalData } from 'MES-Apis'
+import { Button, message } from 'antd';
+
+
+export default () => {
+
+  return <Button
+    onClick={() => {
+      Init.getPublicInfo({
+        onSuccess: (res) => {
+          console.log(res)
+        },
+      })
+    }}>
+    获取公开信息
   </Button>;
 };
 ```

@@ -1,26 +1,24 @@
 ---
-title: 系统登录
+title: 02.系统登录
 ---
 
-## 系统登录
-
-###### Login.useLogin()
+###### UseLogin.login()
 
 ```jsx
 /**
  * title: Hook登录
  */
 import React, { useState } from 'react';
-import { Login } from 'MES-Apis'
+import { UseLogin } from 'MES-Apis'
 import { Space, Button, Input, message } from 'antd';
 
 
 export default () => {
 
   const [success, setSuccess] = useState();
-  const [userData, setUserData] = useState({ username: '', password: '' });
+  const [userData, setUserData] = useState({ username: 'admin', password: '111111' });
 
-  const { loading, run, data, error } = Login.useLogin({
+  const { loading, run, data, error } = UseLogin.login({
     manual: true,
     onSuccess: () => {
       message.success('登录成功！')
@@ -64,7 +62,7 @@ import { Space, Button, Input, message } from 'antd';
 export default () => {
 
   const [success, setSuccess] = useState();
-  const [userData, setUserData] = useState({ username: '', password: '' });
+  const [userData, setUserData] = useState({ username: 'admin', password: '111111' });
 
   return <Space>
     <Space>

@@ -1,6 +1,5 @@
-import React from 'react';
 import axios from 'axios';
-import { Init } from '../../src/Init';
+import { GlobalData } from '../../src/Init';
 
 
 const ajaxService = axios.create({
@@ -12,8 +11,8 @@ const ajaxService = axios.create({
 });
 
 ajaxService.interceptors.request.use((config) => {
-  config.headers.Authorization = window.mesApisToken || '';
-  config.url = window.dumiBaseURL + config.url;
+  config.headers.Authorization = GlobalData.mesApisToken || '';
+  config.url = GlobalData.baseURL + config.url;
   return config;
 }, (error) => {
   return error;
@@ -27,12 +26,13 @@ ajaxService.interceptors.response.use((response) => {
   const errCode = typeof responseData.errCode !== 'undefined' ? parseInt(responseData.errCode, 0) : 0;
   if (errCode !== 0) {
     if (errCode === 1502) {
-      typeof window.loginTimeOut === 'function' && window.loginTimeOut(responseData.message);
+      typeof GlobalData.loginTimeOut === 'function' && GlobalData.loginTimeOut(responseData.message);
       throw new Error(responseData.message);
     } else if (errCode === 1001) {
       return responseData;
     } else if (errCode !== 200) {
-      typeof window.errorMessage === 'function' && window.errorMessage(responseData.message);
+      GlobalData.newError = responseData.message
+      typeof GlobalData.errorMessage === 'function' && GlobalData.errorMessage(responseData.message);
     }
     throw new Error(responseData.message);
   }

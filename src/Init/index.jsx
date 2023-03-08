@@ -1,19 +1,41 @@
+import { request } from '../../uitl/Service/request';
+
+export const GlobalData = {
+  baseURL: '',
+  loginTimeOut: null,
+  errorMessage: null,
+  mesApisToken: '',
+  newError: '',
+};
+
 export const initBaseURL = (url) => {
-  window.dumiBaseURL = url;
+  GlobalData.baseURL = url;
 };
 
 export const responseConfig = (
   {
-    loginTimeOut=()=>{},
-    errorMessage=()=>{},
+    loginTimeOut = () => {
+    },
+    errorMessage = () => {
+    },
   }) => {
-  window.loginTimeOut = loginTimeOut;
-  window.errorMessage = errorMessage;
+  GlobalData.loginTimeOut = loginTimeOut;
+  GlobalData.errorMessage = errorMessage;
+};
+
+export const getNewErrorMessage = () => {
+  return GlobalData.newError;
+};
+
+const getPublicInfo = (params) => {
+  return request({ url: '/getPublicInfo', method: 'GET' }, {}, params);
 };
 
 
 export const Init = {
   initBaseURL,
   responseConfig,
+  getPublicInfo,
+  getNewErrorMessage,
 };
 

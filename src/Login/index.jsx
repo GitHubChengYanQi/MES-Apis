@@ -1,45 +1,7 @@
-import { request, useRequest } from '../../uitl/Service/request';
+import { UseLogin } from './hooks';
+import { Login } from './promise';
 
-const loginUrl = { method: 'POST', url: '/rest/login' };
-export const useLogin = (params) => {
-
-  const {
-    onSuccess = () => {
-    },
-  } = params;
-
-  return useRequest(loginUrl, {}, {
-    ...params,
-    onSuccess: (res) => {
-      if (res.errCode === 0) {
-        window.mesApisToken = res.data;
-        onSuccess(res.data);
-      }
-    },
-  });
-};
-
-export const login = ({ username, password },params) => {
-
-  const {
-    onSuccess = () => {
-    },
-  } = params;
-
-  return request(loginUrl, { data: { username, password } },{
-    ...params,
-    onSuccess: (res) => {
-      if (res.errCode === 0) {
-        window.mesApisToken = res.data;
-        onSuccess(res.data);
-      }
-    },
-  });
-};
-
-
-export const Login = {
-  useLogin,
-  login,
-};
-
+export {
+  Login,
+  UseLogin
+}

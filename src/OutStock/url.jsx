@@ -1,0 +1,17 @@
+export const checkCodeUrl = { url: '/productionPickLists/checkCode', method: 'GET' };
+export const outDetail = { url: '/productionPickLists/detail', method: 'POST' };
+export const outDetailList = { url: '/productionPickListsDetail/noPageList', method: 'POST' };
+export const autoAdd = { url: '/productionPickListsCart/autoAdd', method: 'POST' };
+export const cartAddUrl = { url: '/productionPickListsCart/add', method: 'POST' };
+export const getPositionsAndBrandsUrl = { url: '/storehousePositions/selectByBrand', method: 'POST' };
+export const outStockShopUrl = { url: '/productionPickLists/listByUser', method: 'POST' };
+export const productionPickListsSend = { url: '/productionPickLists/sendPersonPick', method: 'POST' };
+export const deleteBatch = { url: '/productionPickListsCart/deleteBatch', method: 'POST' };
+export const getOutStockCartsUrl = { url: '/productionPickListsCart/getSelfCartsByLists', method: 'POST' };
+export const createPickCodeUrl = { url: '/productionPickLists/createCode', method: 'POST' };
+export const createPickCodeUrlV2_0 = { url: '/productionPickLists/v2.0/createCode', method: 'POST' };
+export const logList = { url: '/instockLogDetail/getOutStockLogs', method: 'POST' };
+export const listByCodeUrl = { url: '/productionPickLists/listByCode', method: 'GET' };
+export const outStockUrl = { url: '/productionPickLists/createOutStockOrder', method: 'POST' };
+export const outStockUrlV1_2 = { url: '/productionPickLists/v1.2/createOutStockOrder', method: 'POST' };
+export const outStockUrlV2_0 = { url: '/productionPickLists/v2.0/createOutStockOrder', method: 'POST' };

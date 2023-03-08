@@ -1,5 +1,5 @@
 ---
-title: 物料
+title: 04.物料
 ---
 
 ## 列表
@@ -11,13 +11,13 @@ title: 物料
  * title: 使用Hook请求
  */
 import React from 'react';
-import { Sku } from 'MES-Apis'
+import { UseSku } from 'MES-Apis'
 import { Button } from 'antd';
 
 
 export default () => {
 
-  const { loading, run } = Sku.useList({
+  const { loading, run } = UseSku.list({
     params: {
       manual: true,
       onSuccess: (res) => {
@@ -70,7 +70,7 @@ import { Button } from 'antd';
 
 export default () => {
 
-  const { loading, run } = Sku.useAdd({
+  const { loading, run } = UseSku.add({
     params: {
       manual: true,
       onSuccess: (res) => {
@@ -121,7 +121,32 @@ export default () => {
 
 ## 其他
 
-###### Sku.getSkuImgs()
+###### Sku.loadSkuImgs()
+
+```jsx
+/**
+ * title: 加载物料图片
+ */
+
+import React from 'react';
+import { Sku } from 'MES-Apis'
+import { Button } from 'antd'
+
+export default () => {
+
+  return <Button onClick={async () => {
+    const { skuImgs, newSkus } = await Sku.loadSkuImgs({
+      startIndex: 0,
+      count: 2,
+      skus: [{ mediaId: 111 }, { mediaId: 222 },],
+      mediaIdKey: (item) => item.mediaId
+    })
+    console.log(skuImgs, newSkus)
+  }}>加载物料图片</Button>;
+};
+```
+
+###### Sku.getMediaUrls()
 
 ```jsx
 /**
@@ -135,12 +160,7 @@ import { Button } from 'antd'
 export default () => {
 
   return <Button onClick={async () => {
-    const { skuImgs, newSkus } = await Sku.getSkuImgs({
-      startIndex: 0,
-      count: 2,
-      skus: [{ mediaId: 111 }, { mediaId: 222 },],
-      mediaIdKey: (item) => item.mediaId
-    })
+    const { skuImgs, newSkus } = await Sku.getMediaUrls()
     console.log(skuImgs, newSkus)
   }}>获取物料图片</Button>;
 };
