@@ -4,3 +4,8 @@ export const orderListViewUrl = {
   url: '/orderDetail/v2.0/orderView',
   method: 'POST'
 };
+
+export const orderListViewTotalUrl = {
+  url: '/stockDetails/viewTotal',
+  method: 'POST'
+};
