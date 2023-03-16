@@ -1,5 +1,5 @@
 import { orderListUrl } from './url';
-import { request } from '../../uitl/Service/request';
+import { request } from '../Service/request';
 
 const list = (service, params) => {
 

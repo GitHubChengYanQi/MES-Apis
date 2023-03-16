@@ -1,4 +1,4 @@
-import { useRequest } from '../../uitl/Service/useRequest';
+import { useRequest } from '../Service/useRequest';
 import { orderListViewUrl } from './url';
 
 const orderListView = (service, params) => {

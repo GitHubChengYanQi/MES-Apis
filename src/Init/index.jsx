@@ -1,12 +1,5 @@
-import { request } from '../../uitl/Service/request';
-
-export const GlobalData = {
-  baseURL: '',
-  loginTimeOut: null,
-  errorMessage: null,
-  mesApisToken: '',
-  newError: '',
-};
+import { request } from '../Service/request';
+import { GlobalData } from '../index';
 
 export const initBaseURL = (url) => {
   GlobalData.baseURL = url;

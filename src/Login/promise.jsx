@@ -1,11 +1,10 @@
-import { request } from '../../uitl/Service/request';
-import { GlobalData, setToken } from '../Init';
+import { request } from '../Service/request';
+import { setToken } from '../Init';
 import {
   codeToSessionUrl,
   getUserProfileUrl,
   loginByPhoneUrl,
   loginUrl,
-  qywxLoginByCode,
   qywxLoginByCodeUrl, refreshTokenUrl,
   wxCpLoginUrl,
 } from './url';

@@ -1,4 +1,4 @@
-import { request } from '../../uitl/Service/request';
+import { request } from '../Service/request';
 import {
   autoInStockUrlV2_0,
   shopCartAddUrl, showOrderDetailListUrlV2_0, showOrderListUrlV2_0,

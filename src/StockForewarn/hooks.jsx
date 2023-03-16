@@ -1,4 +1,4 @@
-import { useRequest } from '../../uitl/Service/useRequest';
+import { useRequest } from '../Service/useRequest';
 import { getSupplyBySkuIds, purchaseListAdd, purchaseListEdit, warningSkuUrl } from './url';
 import { useEffect, useState } from 'react';
 

@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import requestService from './index';
 
-const { ajaxService } = requestService();
+
 
 export const useRequest = (
   api,
   service = {},
   defaultParams = {},
 ) => {
+
+  const { ajaxService } = requestService();
 
   const {
     manual,

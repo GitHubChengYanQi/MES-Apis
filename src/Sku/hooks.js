@@ -1,4 +1,4 @@
-import { useRequest } from '../../uitl/Service/useRequest';
+import { useRequest } from '../Service/useRequest';
 import { skuAddApi, skuListApi } from './url';
 import { validation } from './util';
 

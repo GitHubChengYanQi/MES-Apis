@@ -1,6 +1,5 @@
 import requestService from './index';
 
-const { ajaxService } = requestService();
 
 
 export const request = (
@@ -8,6 +7,9 @@ export const request = (
   service = {},
   defaultParams = {},
 ) => {
+
+
+  const { ajaxService } = requestService();
 
   const {
     onSuccess = () => {

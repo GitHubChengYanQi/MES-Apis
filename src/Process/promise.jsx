@@ -1,4 +1,4 @@
-import { request } from '../../uitl/Service/request';
+import { request } from '../Service/request';
 import { auditDetailUrl, auditListUrl, auditPostUrl, dynamicListUrl, getTaskIdApi } from './url';
 
 const auditDetail = async ({ taskId, formId, type }) => {

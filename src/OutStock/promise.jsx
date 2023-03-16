@@ -1,4 +1,4 @@
-import { request } from '../../uitl/Service/request';
+import { request } from '../Service/request';
 import {
   autoAdd,
   cartAddUrl, checkCodeUrl, createPickCodeUrl, createPickCodeUrlV2_0, deleteBatch, getOutStockCartsUrl,

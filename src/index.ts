@@ -1,4 +1,10 @@
-
+export const GlobalData = {
+  baseURL: '',
+  loginTimeOut: null,
+  errorMessage: null,
+  mesApisToken: '',
+  newError: '',
+};
 
 // @ts-ignore
 export { Init } from './Init';
@@ -22,3 +28,4 @@ export { Production } from './Production';
 export { UseStockForewarn } from './StockForewarn';
 // @ts-ignore
 export { ErpEnums, ErpAction } from './Erp';
+

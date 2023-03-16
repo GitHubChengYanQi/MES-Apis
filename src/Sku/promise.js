@@ -1,5 +1,5 @@
 // 物料列表
-import { request } from '../../uitl/Service/request';
+import { request } from '../Service/request';
 import { mediaGetMediaUrls, skuAddApi, skuDetailUrl, skuListApi } from './url';
 import { validation } from './util';
 

@@ -1,4 +1,4 @@
-import { request } from '../../uitl/Service/request';
+import { request } from '../Service/request';
 import { partsGetByBomIdUrl, partsList } from './url';
 
 const list = (service, params) => {

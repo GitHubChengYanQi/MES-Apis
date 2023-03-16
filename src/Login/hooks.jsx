@@ -1,4 +1,4 @@
-import { useRequest } from '../../uitl/Service/useRequest';
+import { useRequest } from '../Service/useRequest';
 import { setToken } from '../Init';
 import { loginUrl, qywxLoginByPhoneUrl, wxCpLoginUrl } from './url';
 

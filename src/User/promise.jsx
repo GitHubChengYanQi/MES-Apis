@@ -1,4 +1,4 @@
-import { request } from '../../uitl/Service/request';
+import { request } from '../Service/request';
 import { deptTreeUrl, userInfo, userListUrl, userSelect } from './url';
 
 export const getUserInfo = (params) => {
