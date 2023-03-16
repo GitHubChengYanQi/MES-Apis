@@ -1,6 +1,6 @@
 // 物料列表
 import { request } from '../../uitl/Service/request';
-import { mediaGetMediaUrls, skuAddApi, skuListApi } from './url';
+import { mediaGetMediaUrls, skuAddApi, skuDetailUrl, skuListApi } from './url';
 import { validation } from './util';
 
 
@@ -60,9 +60,14 @@ const add = (service) => {
   }
 };
 
+const detail = (skuId, params) => {
+  return request(skuDetailUrl, { data: { skuId } }, params);
+};
+
 export const Sku = {
   list,
   add,
   loadSkuImgs,
-  getMediaUrls
+  getMediaUrls,
+  detail,
 };

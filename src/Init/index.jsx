@@ -12,6 +12,11 @@ export const initBaseURL = (url) => {
   GlobalData.baseURL = url;
 };
 
+
+export const setToken = (token) => {
+  GlobalData.mesApisToken = token;
+};
+
 export const responseConfig = (
   {
     loginTimeOut = () => {
@@ -37,5 +42,6 @@ export const Init = {
   responseConfig,
   getPublicInfo,
   getNewErrorMessage,
+  setToken,
 };
 

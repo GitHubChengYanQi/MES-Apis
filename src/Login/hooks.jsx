@@ -1,6 +1,6 @@
 import { useRequest } from '../../uitl/Service/useRequest';
-import { GlobalData } from '../Init';
-import { loginUrl } from './url';
+import { setToken } from '../Init';
+import { loginUrl, qywxLoginByPhoneUrl, wxCpLoginUrl } from './url';
 
 
 const login = (params) => {
@@ -14,7 +14,44 @@ const login = (params) => {
     ...params,
     onSuccess: (res) => {
       if (res.errCode === 0) {
-        GlobalData.mesApisToken = res.data;
+        setToken(res.data);
+        onSuccess(res.data);
+      }
+    },
+  });
+};
+
+
+const wxCpLogin = (params) => {
+
+  const {
+    onSuccess = () => {
+    },
+  } = params;
+
+  return useRequest(wxCpLoginUrl, {}, {
+    ...params,
+    onSuccess: (res) => {
+      if (res.errCode === 0) {
+        setToken(res.data)
+        onSuccess(res.data);
+      }
+    },
+  });
+};
+
+const QWLoginByPhone = (params) => {
+
+  const {
+    onSuccess = () => {
+    },
+  } = params;
+
+  return useRequest(qywxLoginByPhoneUrl, {}, {
+    ...params,
+    onSuccess: (res) => {
+      if (res.errCode === 0) {
+        setToken(res.data)
         onSuccess(res.data);
       }
     },
@@ -23,4 +60,6 @@ const login = (params) => {
 
 export const UseLogin = {
   login,
+  QWLoginByPhone,
+  wxCpLogin,
 };

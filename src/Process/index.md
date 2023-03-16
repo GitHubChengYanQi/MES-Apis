@@ -85,3 +85,24 @@ export default () => {
   }}>获取审批列表</Button>;
 };
 ```
+
+###### UseProcess.auditList()
+
+```jsx
+/**
+ * title: 审批列表
+ */
+import React from 'react';
+import { Process } from 'MES-Apis'
+import { Button } from 'antd';
+
+
+export default () => {
+
+
+  return <Button onClick={async () => {
+    const res = await UseProcess.auditList({ })
+    console.log(res)
+  }}>获取审批列表</Button>;
+};
+```
