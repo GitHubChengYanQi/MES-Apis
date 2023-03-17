@@ -1,6 +1,5 @@
 import { useRequest } from '../Service/useRequest';
 import { getSupplyBySkuIds, purchaseListAdd, purchaseListEdit, warningSkuUrl } from './url';
-import { useEffect, useState } from 'react';
 
 const Reserve = (
   {
@@ -10,6 +9,9 @@ const Reserve = (
     },
   },
 ) => {
+
+  const { useEffect, useState }  = require('react');
+
   const purchaseNumber = sku.inventoryFloor - sku.number;
   const waitNumber = purchaseListList.length > 0;
 

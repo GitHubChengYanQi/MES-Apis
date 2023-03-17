@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import requestService from './index';
-
 
 
 export const useRequest = (
@@ -10,6 +8,8 @@ export const useRequest = (
 ) => {
 
   const { ajaxService } = requestService();
+
+  const { useState } = require('react');
 
   const {
     manual,
