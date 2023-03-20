@@ -22,10 +22,10 @@ const SkuResultSkuJsons = ({ skuResult, describe, spu, sku, emptyText }) => {
   }
 
   if (spu) {
-    return `${skuResult.spuName || skuResult.spuResult?.name || ''}`;
+    return `${skuResult.spuName || skuResult.spuResult ? skuResult.spuResult.name : ''}`;
   }
 
-  return `${skuResult.spuName || skuResult.spuResult?.name || ''} / ${skuResult.skuName || '-'}${skuResult.specifications ? ` / ${skuResult.specifications}` : ''}`;
+  return `${skuResult.spuName || skuResult.spuResult ? skuResult.spuResult.name : ''} / ${skuResult.skuName || '-'}${skuResult.specifications ? ` / ${skuResult.specifications}` : ''}`;
 };
 
 

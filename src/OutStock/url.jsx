@@ -1,6 +1,7 @@
 export const checkCodeUrl = { url: '/productionPickLists/checkCode', method: 'GET' };
 export const outDetail = { url: '/productionPickLists/detail', method: 'POST' };
 export const outDetailList = { url: '/productionPickListsDetail/noPageList', method: 'POST' };
+export const productionPickListsDetailListUrl = { url: '/productionPickListsDetail/list', method: 'POST' };
 export const autoAdd = { url: '/productionPickListsCart/autoAdd', method: 'POST' };
 export const cartAddUrl = { url: '/productionPickListsCart/add', method: 'POST' };
 export const getPositionsAndBrandsUrl = { url: '/storehousePositions/selectByBrand', method: 'POST' };
