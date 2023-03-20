@@ -1,6 +1,6 @@
 {
   "name": "MES-Apis",
-  "version": "0.1.14",
+  "version": "0.2.20",
   "description": "A static site based on dumi",
   "scripts": {
     "start": "npm run dev",

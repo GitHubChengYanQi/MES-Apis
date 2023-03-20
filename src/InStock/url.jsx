@@ -10,3 +10,4 @@ export const anomalyDetail = { url: '/anomaly/detail', method: 'POST' };
 export const anomalyEdit = { url: '/anomaly/edit', method: 'POST' };
 export const anomalyDelete = { url: '/anomaly/delete', method: 'POST' };
 export const getInkInd = { url: '/stockDetails/getInkind', method: 'POST' };
+export const instockListUrl = { url: '/instockList/list', method: 'POST' };

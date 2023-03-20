@@ -1,5 +1,3 @@
-
-
 // @ts-ignore
 export { Init } from './Init';
 // @ts-ignore
@@ -11,9 +9,9 @@ export { User } from './User';
 // @ts-ignore
 export { Process, UseProcess } from './Process';
 // @ts-ignore
-export { OutStock } from './OutStock';
+export { OutStock, UseOutStock } from './OutStock';
 // @ts-ignore
-export { InStock } from './InStock';
+export { InStock, UseInStock } from './InStock';
 // @ts-ignore
 export { Order, UseOrder } from './Order';
 // @ts-ignore
@@ -22,3 +20,5 @@ export { Production } from './Production';
 export { UseStockForewarn } from './StockForewarn';
 // @ts-ignore
 export { ErpEnums, ErpAction } from './Erp';
+// @ts-ignore
+export { Storehouse } from './Storehouse';
