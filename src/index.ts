@@ -4,6 +4,7 @@ export const GlobalData = {
   errorMessage: null,
   mesApisToken: '',
   newError: '',
+  requestParams: {},
 };
 
 // @ts-ignore
@@ -27,6 +28,22 @@ export { Production } from './Production';
 // @ts-ignore
 export { UseStockForewarn } from './StockForewarn';
 // @ts-ignore
-export { ErpEnums, ErpAction } from './Erp';
+export { UseErp, ErpEnums, ErpAction, Erp } from './Erp';
 // @ts-ignore
 export { Storehouse } from './Storehouse';
+// @ts-ignore
+export { requestService } from './Service';
+// @ts-ignore
+export { Stocktaking } from './Stocktaking';
+// @ts-ignore
+export { SearchLog } from './SearchLog';
+// @ts-ignore
+export { Stock } from './Stock';
+// @ts-ignore
+export { System } from './System';
+// @ts-ignore
+export { Tenant } from './Tenant';
+// @ts-ignore
+export { Dept } from './Dept';
+// @ts-ignore
+export { Position } from './Position';

@@ -1,4 +1,5 @@
 import { UseErp } from './hook';
+import { Erp } from './promise';
 
 const ErpEnums = {
   // 入库单
@@ -60,4 +61,5 @@ export {
   UseErp,
   ErpAction,
   ErpEnums,
+  Erp
 };

@@ -1,33 +1,36 @@
 import requestService from './index';
-
+import { GlobalData } from '../index';
+import axios from 'axios';
 
 
 export const request = (
   api,
   service = {},
-  defaultParams = {},
+  defaultParams,
 ) => {
 
 
   const { ajaxService } = requestService();
 
-  const {
-    onSuccess = () => {
-    },
-    onError = () => {
-    },
-  } = defaultParams;
-
+  const params = defaultParams || {};
 
   return new Promise((resolve, reject) => {
     ajaxService({
       ...api,
-      ...(service || {}),
+      ...service,
+      params: {
+        ...service.params,
+        ...GlobalData.requestParams,
+      },
     }).then((res) => {
-      onSuccess(res);
+      if (typeof params.onSuccess === 'function') {
+        params.onSuccess(res);
+      }
       resolve(res);
     }).catch((res) => {
-      onError(res);
+      if (typeof params.onError === 'function') {
+        params.onError(res);
+      }
       reject(res);
     });
   });

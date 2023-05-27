@@ -1,4 +1,5 @@
 import requestService from './index';
+import { useState } from 'react';
 
 
 export const useRequest = (
@@ -9,21 +10,13 @@ export const useRequest = (
 
   const { ajaxService } = requestService();
 
-  const { useState } = require('react');
-
-  const {
-    manual,
-    onSuccess = () => {
-    },
-    onError = () => {
-    },
-  } = defaultParams;
-
   const [data, setData] = useState();
 
   const [error, setError] = useState();
 
   const [loading, setLoading] = useState(false);
+
+  const params = defaultParams || {};
 
   const run = (service) => {
     setLoading(true);
@@ -34,18 +27,22 @@ export const useRequest = (
       }).then((res) => {
         resolve(res);
         setData(res);
-        onSuccess(res);
+        if (typeof params.onSuccess === 'function'){
+          params.onSuccess(res);
+        }
       }).catch((res) => {
         setError(res);
         reject(res);
-        onError(res);
+        if (typeof params.onError === 'function'){
+          params.onError(res);
+        }
       }).finally(() => {
         setLoading(false);
       });
     });
   };
 
-  if (manual !== true) {
+  if (defaultParams?.manual !== true) {
     run(service);
   }
 

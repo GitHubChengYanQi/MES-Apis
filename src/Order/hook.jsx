@@ -1,12 +1,15 @@
 import {
+  getMediaByIdsUrl,
+  getUserResultByOpenIdsUrl,
   orderDetailListUrl,
   orderListUrl,
   orderListViewTotalUrl,
-  orderListViewUrl,
+  orderListViewUrl, paymentRecordAddByApply, requestFundsDetailUrl, requestFundsListUrl,
   requestFundsPostUrl,
   requestFundsTemplate,
 } from './url';
 import { useRequest } from '../Service/useRequest';
+import { request } from '../Service/request';
 
 const orderListView = (service, params) => {
   return useRequest(orderListViewUrl, service, params);
@@ -34,6 +37,27 @@ const requestFundsPost = (service, params) => {
   return useRequest(requestFundsPostUrl, service, params);
 };
 
+const requestFundsList = (service, params) => {
+  return useRequest(requestFundsListUrl, service, params);
+};
+
+const addPaymentRecord = (service, params) => {
+  return useRequest(paymentRecordAddByApply, service, params);
+};
+
+const requestFundsDetail = (service, params) => {
+  return useRequest(requestFundsDetailUrl, service, params);
+};
+
+const getUserResultByOpenIds = (service, params) => {
+  return useRequest(getUserResultByOpenIdsUrl, service, params);
+};
+
+
+const getMediaByIds = (service, params) => {
+  return useRequest(getMediaByIdsUrl, service, params);
+};
+
 export const UseOrder = {
   orderListView,
   orderListViewTotal,
@@ -41,4 +65,9 @@ export const UseOrder = {
   orderDetailList,
   getRequestFundsTemplate,
   requestFundsPost,
+  requestFundsList,
+  addPaymentRecord,
+  requestFundsDetail,
+  getUserResultByOpenIds,
+  getMediaByIds,
 };

@@ -10,6 +10,10 @@ export const setToken = (token) => {
   GlobalData.mesApisToken = token;
 };
 
+export const requestParams = (params) => {
+  GlobalData.requestParams = params;
+};
+
 export const responseConfig = (
   {
     loginTimeOut = () => {
@@ -36,5 +40,6 @@ export const Init = {
   getPublicInfo,
   getNewErrorMessage,
   setToken,
+  requestParams
 };
 

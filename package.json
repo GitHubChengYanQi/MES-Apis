@@ -1,12 +1,16 @@
 {
   "name": "MES-Apis",
-  "version": "0.2.20",
+  "version": "0.2.136",
   "description": "A static site based on dumi",
   "scripts": {
     "start": "npm run dev",
     "dev": "dumi dev",
-    "build": "father-build & npm publish"
+    "build": "father-build && npm publish"
   },
+  "files": [
+    "lib/*",
+    "node_modules/*"
+  ],
   "authors": [],
   "license": "MIT",
   "commitlint": {

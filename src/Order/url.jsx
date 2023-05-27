@@ -25,3 +25,36 @@ export const requestFundsPostUrl = {
   url: '/wxAudit/post',
   method: 'POST',
 };
+
+
+export const requestFundsListUrl = {
+  url: '/paymentApply/list',
+  method: 'POST',
+};
+
+
+export const paymentRecordAddByApply = {
+  url: '/paymentRecord/addByApply',
+  method: 'POST',
+};
+
+export const requestFundsDetailUrl = {
+  url: '/wxAudit/getDetail',
+  method: 'POST',
+};
+
+
+export const getUserResultByOpenIdsUrl = {
+  url: '/mgr/getUserResultByOpenIds',
+  method: 'POST',
+};
+
+export const getMediaByIdsUrl = {
+  url: '/wxAudit/getMediaByIds',
+  method: 'POST',
+};
+
+export const orderDetail = {
+  url: '/order/detail',
+  method: 'POST'
+};

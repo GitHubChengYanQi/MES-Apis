@@ -1,5 +1,5 @@
-import { request } from '../../uitl/Service/request';
 import { backObjectUrl } from './url';
+import { request } from '../Service/request';
 
 
 const backObject = (service, params) => {
