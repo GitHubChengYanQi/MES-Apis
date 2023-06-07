@@ -58,3 +58,13 @@ export const orderDetail = {
   url: '/order/detail',
   method: 'POST'
 };
+
+export const orderAddUrl = {
+  url: '/order/v1.1/add',
+  method: 'POST'
+};
+
+export const autoInStockUrl = {
+  url: '/instockOrder/v2.0/autoInStock',
+  method: 'POST'
+};

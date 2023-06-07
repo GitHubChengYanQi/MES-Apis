@@ -12,7 +12,7 @@ import {
   materialListSelectUrl,
   mediaGetMediaUrls,
   skuAddApi,
-  skuAddApiV2_0, skuDeleteBatchUrl,
+  skuAddApiV2_0, skuBatchAddApi, skuDeleteBatchUrl,
   skuDeleteUrl,
   skuDetailUrl,
   skuEditUrl,
@@ -225,6 +225,11 @@ const categorySort = (service, params) => {
   return request(categorySortUrl, service, params);
 };
 
+
+const batchAdd = (service, params) => {
+  return request(skuBatchAddApi, service, params);
+};
+
 export const Sku = {
   list,
   listV1_1,
@@ -259,5 +264,6 @@ export const Sku = {
   del,
   categorySort,
   spuClassBatchDelete,
-  batchDelete
+  batchDelete,
+  batchAdd
 };

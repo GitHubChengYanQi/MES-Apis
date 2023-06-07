@@ -47,3 +47,5 @@ export { Tenant } from './Tenant';
 export { Dept } from './Dept';
 // @ts-ignore
 export { Position } from './Position';
+// @ts-ignore
+export { Crm } from './Crm';

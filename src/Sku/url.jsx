@@ -31,3 +31,7 @@ export const skuDeleteUrl = { url: '/sku/delete', method: 'POST' };
 export const categorySortUrl = { url: '/category/v2.0/sort', method: 'POST' };
 export const spuClassificationDeleteBatch = { url: '/spuClassification/deleteBatch', method: 'POST' };
 export const skuDeleteBatchUrl = { url: '/sku/deleteBatch', method: 'POST', };
+export const skuBatchAddApi = {
+  method: 'POST',
+  url: '/sku/v2.0/addBatch'
+};

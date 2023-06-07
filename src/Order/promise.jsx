@@ -1,4 +1,12 @@
-import { orderDetail, orderListUrl, paymentRecordAddByApply, requestFundsListUrl } from './url';
+import {
+  autoInStockUrl,
+  orderAddUrl,
+  orderDetail,
+  orderListUrl,
+  paymentRecordAddByApply,
+  productionPickListsCartAutoAdd,
+  requestFundsListUrl
+} from './url';
 import { request } from '../Service/request';
 
 const list = (service, params) => {
@@ -22,9 +30,19 @@ const addPaymentRecord = (service, params) => {
   return request(paymentRecordAddByApply, service, params);
 };
 
+const orderAdd = (service, params) => {
+  return request(orderAddUrl, service, params);
+};
+
+const autoInStock = (service, params) => {
+  return request(autoInStockUrl, service, params);
+};
+
 export const Order = {
   list,
   requestFundsList,
   addPaymentRecord,
   detail,
+  orderAdd,
+  autoInStock
 };
